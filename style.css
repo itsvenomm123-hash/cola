@@ -1,0 +1,318 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', Arial, sans-serif;
+}
+
+/* BODY */
+body {
+    background: #ffffff;
+    color: #222;
+    line-height: 1.6;
+}
+
+/* TITLE */
+h1 {
+    text-align: center;
+    font-size: 3.5rem;
+    color: #e10600;
+    margin-top: 40px;
+    letter-spacing: 2px;
+}
+
+/* MAIN TEXT */
+p {
+    max-width: 900px;
+    margin: 20px auto;
+    text-align: center;
+    font-size: 1.1rem;
+    color: #444;
+}
+
+/* NAVIGATION */
+nav {
+    margin: 40px auto;
+    display: flex;
+    justify-content: center;
+    gap: 35px;
+    padding: 15px;
+    background: #e10600;
+    border-radius: 50px;
+    width: fit-content;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: #000;
+    transform: scale(1.1);
+}
+
+/* HERO IMAGE BACKGROUND */
+.abcoca {
+    height: 80vh;
+    background: linear-gradient(rgba(225,6,0,0.5), rgba(0,0,0,0.6)),
+        url("https://www.pixelstalk.net/wp-content/uploads/2016/08/Coca-Cola-Wallpaper.jpeg")
+        center/cover no-repeat;
+    border-radius: 30px;
+    margin: 50px;
+}
+
+/* SECTIONS */
+section {
+    padding: 80px 10%;
+}
+
+/* HEADINGS */
+section h2 {
+    text-align: center;
+    font-size: 2.8rem;
+    color: #e10600;
+    margin-bottom: 30px;
+}
+
+/* ABOUT IMAGE */
+#about img {
+    display: block;
+    margin: 40px auto;
+    width: 70%;
+    max-width: 600px;
+    border-radius: 25px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.25);
+    transition: 0.4s;
+}
+
+#about img:hover {
+    transform: scale(1.05);
+}
+
+/* FEATURES SECTION */
+.ftcoca {
+    background: #f5f5f5;
+}
+
+#features p {
+    max-width: 900px;
+    margin: auto;
+    font-size: 1.05rem;
+    line-height: 1.9;
+}
+
+#features img {
+    display: block;
+    margin: 50px auto 0;
+    width: 80%;
+    max-width: 650px;
+    border-radius: 30px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+}
+
+/* GALLERY */
+#gallery {
+    background: #111;
+    color: white;
+    text-align: center;
+}
+
+#gallery h4 {
+    margin: 15px 0 40px;
+    font-size: 1.2rem;
+}
+
+#gallery img {
+    width: 260px;
+    margin: 20px;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(255,0,0,0.4);
+    transition: 0.4s;
+}
+
+#gallery img:hover {
+    transform: translateY(-15px) scale(1.05);
+}
+
+/* CONTACT */
+#contact p {
+    font-size: 1.1rem;
+}
+
+/* FOOTER */
+footer {
+    background: #000;
+    color: white;
+    text-align: center;
+    padding: 30px;
+    margin-top: 60px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    nav {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    #gallery img {
+        width: 90%;
+    }
+}
+
+
+/* FUNCTIONS LIST STYLE */
+#features ol {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 0;
+    list-style: none;
+    counter-reset: coca;
+}
+
+#features ol li {
+    background: white;
+    margin: 20px 0;
+    padding: 25px 30px 25px 80px;
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+    position: relative;
+    font-size: 1.1rem;
+    transition: 0.4s;
+}
+
+#features ol li::before {
+    counter-increment: coca;
+    content: counter(coca);
+    position: absolute;
+    left: 25px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: #e10600;
+    color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 1.2rem;
+}
+
+#features ol li:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 45px rgba(225,6,0,0.35);
+}
+
+#features ol li strong {
+    color: #e10600;
+}
+/* HERO SECTION – ABCOCA */
+.abcoca {
+    position: relative;
+    height: 90vh;
+    margin: 40px 60px;
+    border-radius: 35px;
+    overflow: hidden;
+
+    /* BACKGROUND IMAGE */
+    background-image: url("https://media.cnn.com/api/v1/images/stellar/prod/gettyimages-2179849363.jpg?c=original");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    /* GRADIENT OVERLAY */
+    background-blend-mode: overlay;
+    background-color: rgba(225,6,0,0.4);
+    box-shadow: 0 30px 60px rgba(0,0,0,0.4);
+
+    /* ANIMATION ON LOAD */
+    animation: fadeInHero 1.8s ease forwards;
+}
+
+/* TEXT IN HERO */
+.abcoca .hero-text {
+    position: absolute;
+    bottom: 50px;
+    left: 60px;
+    color: white;
+    max-width: 600px;
+    animation: slideUp 1.5s ease forwards;
+}
+
+/* HERO TITLE */
+.abcoca .hero-text h2 {
+    font-size: 4rem;
+    font-weight: 900;
+    text-shadow: 0 10px 25px rgba(0,0,0,0.6);
+    margin-bottom: 15px;
+}
+
+/* HERO SUBTEXT */
+.abcoca .hero-text p {
+    font-size: 1.3rem;
+    line-height: 1.6;
+    text-shadow: 0 5px 15px rgba(0,0,0,0.5);
+    margin-bottom: 25px;
+}
+
+/* HERO BUTTON */
+.btn-hero {
+    display: inline-block;
+    background: #ff1a1a;
+    color: white;
+    padding: 15px 35px;
+    border-radius: 30px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: 0.4s;
+}
+
+.btn-hero:hover {
+    background: white;
+    color: #ff1a1a;
+    transform: scale(1.05);
+}
+
+/* HOVER EFFECT ON HERO */
+.abcoca:hover {
+    transform: scale(1.01);
+    transition: 0.5s ease;
+}
+
+/* KEYFRAME ANIMATIONS */
+@keyframes fadeInHero {
+    from { opacity: 0; transform: scale(1.03); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes slideUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .abcoca {
+        margin: 20px;
+        height: 70vh;
+    }
+    .abcoca .hero-text h2 {
+        font-size: 2.8rem;
+    }
+    .abcoca .hero-text p {
+        font-size: 1rem;
+    }
+    .btn-hero {
+        padding: 12px 28px;
+    }
+}
+
